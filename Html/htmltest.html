@@ -1,0 +1,256 @@
+<!--HTML测试文件 -->
+<!doctype html>
+<html>
+    <head>                  <!--头部信息 -->
+    <!--元信息标记，页面说明，关键字，刷新... -->
+    <!--合理设置关键字有利于网页更高的被搜索 -->
+    <!--<meta name = "keyword（属性名称）" content = "具体（什么关键字）">--> 
+    
+    <meta http-equiv="content-type" content="text/html; charest=gb2312">
+
+    <title>HTML学习笔记</title>
+    </head>
+    <a name="1"></><h1 align="center">HTML笔记</h1>
+    <hr><!--水平线-->
+	<table border="2">
+    <caption>元信息标记meta</caption>
+    <tr><td>name(属性名称)</td><td>具体含义</td></tr>
+    <tr><td>descrption</td><td>页面说明</td></tr>
+    <tr><td>generator</td><td>定义编辑工具</td></tr>
+    <tr><td>author</td>  <td>添加作者信息</td></tr>
+	</table>
+	<table border="2">
+    <tr><td>http-equiv(页面设置)</td>  <td>具体含义content</td></tr>
+    <tr><td>content-type </td><td>文字语言content="text/html; charest=gb2312"</td></tr>
+    <tr><td>refresh </td>   <td>定时跳转content="20; url=www.baidu.com" </td>  </tr>
+	</table>
+	
+	
+    <h4>六级标题</h4>
+	<ul>
+    <li>1级标题</li>
+    <li>2级标题</li>
+    <li>3级标题</li>
+    <li>4级标题(居中对齐)</li>
+    <li>5级标题（左对齐）</li>
+    <li>6级标题（右对齐）</li>
+	</ul>
+
+    <h4>换行<br>标记&lt;br&gt;</h4>
+    <h4><nobr>不换行标记&lt;nobr&gt;</nobr></h4>
+    <h4>空&nbsp;&nbsp;&nbsp;格</h4>
+	
+	<ul>
+    <li><a href="demo.html" target="_blank">内部链接</a></li>
+	<li><a href="#1">锚点链接(回到顶部)</a>              </li>
+	<li><a href="demo.html#1">链接其他页面锚点</a>       </li>
+    <li><a href="http://www.baidu.com">外部链接（百度）</a></li><!--外部链接必须加http://开头-->
+	</ul>
+	
+	
+	<br>
+	<h5>href内容                 含义</h5>
+	<h6>mailto:开头              邮件       </h6>
+	<h6>ftp://开头               FTP链接           </h6>
+	<h6>telnet://开头            telnet链接              </h6>
+	<h6>文件地址路径             下载文件               </h6>
+	<!--不管width height如何设置都会加载整个图片，不会加快加载速度-->
+    <div align="center"><a href="demo.html"><img src="images/lake.jpg" width="474" height="264" alt="湖"></a></div>
+    <body>
+    <div align="center">
+		图片热区（区域锚点）映射<br>
+		<img src="images/lake.jpg" width="474" height="264" alt="湖" usemap="#映射图像名称">
+		<map name="映射图像名称">
+		<area shape="rect" coords="0,0,20,30" href="demo.html">
+		<!--coords也可以用DW选取复杂的选区 -->
+		</map>
+		
+	</div>
+    <ol type="A" start="3"><!--有序列表默认123-->
+    	<li>周一</li>
+    	<li>周二</li>
+    	<li>周三</li>
+    	<li>周四</li>
+    </ol>
+	<ul type="circle"><!--无序列表，默认disc-->
+		<li>周一</li>
+		<li>周二</li>
+		<li>周三</li>
+		<li>周四</li>
+	</ul>
+	<dl><!--定义列表，常用来列举名词概念-->
+		<dt>定义条件</dt>
+		<dd>定义描述</dd>
+		<dt>...</dt>
+		<dd>...</dd><br>
+		....
+	</dl>
+	<h5>工作日：</h5>
+	<menu><!--菜单列表-->
+		<li>周一</li>
+		<li>周二</li>
+		<li>周三</li>
+		<li>周四</li>
+		<li>周五</li>
+	</menu>
+	<!--cellpadding文字与边框的间距；bgcolor背景颜色;background背景图片-->
+	<table width="500" height="130" align="center" border="1" bgcolor="red" ><!--表格-->
+	    <caption>成绩表</caption>
+		<thead>
+		<th height="60">姓名</th><!--th表头单元格，是td的变体，默认加粗居中-->
+		<th>成绩</th>
+		</thead>
+		
+		<tbody>
+		<tr align="center" bgcolor="antiquewhite"><!--行标签,行属性与表格属性类似，多一个valign垂直对齐(top,middle,bottom)-->
+		    <td><a href="#1">张三</a></td>
+			<td>68</td>
+		</tr>
+		<tr height=" 60" align="center" valign="top">
+		    <td rowspan="2">李四</td><!--垂直跨度值-->
+			<td>123</td>
+		</tr>
+		<tr align="center" >
+		    
+		<td bordercolordark="#ff0000"bgcolor="aquamarine">68</td>
+		</tr>
+		<tr align="center">
+		    <td colspan="2">李四</td><!--colspan水平跨度值-->
+		</tr>
+		</tbody>
+		<tfoot>
+			<td align="center" colspan="2">谢谢观看！</td>
+		</tfoot>
+	</table>
+	<h4>表单</h4>
+	<hrzzx>
+	<form action="表单提交的地址" name="表单名字" method="表单http传送方法" enctype="表单编码方式" target="目标窗口打开方式">
+		姓名：<input name="name" type="text" size="11" /><br><!--value默认值 maxlength最多可输入字符数-->
+		年龄：<input name="age" type="text" value="18" size="11" maxlength="11"/>    文本框<br>
+		密码：<input name="password" type="password" value="666666" maxlength="6"/>  密码框<br>
+		性别：<input name="sex"type="radio"checked="checked" value="radiobutton">男
+		     <input name="sex" type="radio" value="radiobutton" />女  &nbsp;&nbsp;&nbsp;单选按钮<br>
+	    兴趣爱好：<input name="checkbox" type="checkbox"  />游泳
+		        <input name="checkbox" type="checkbox"  />篮球
+				<input name="checkbox" type="checkbox" />冲浪<br>
+		<input name="b1" type="submit" value="提交按钮" /><br>
+	    <input name="b1" type="button" value="普通按钮" onclick="windows.close()"/><br>
+		<input name="b1" type="reset" value="重置按钮" /><br>
+		<input name="b1" type="image" value="图像按钮" src="" /><br>
+		<input name="b1" type="hidden" value="隐藏域" />
+		查看文件：<input name="file" type="file" size="30" maxlength="32"/><br>
+		地区：
+		<select>
+		<option value="上海" selected="selected" >上海</option>
+		<option value="天津">天津</option>
+		<option value="山东">山东</option>
+		</select>
+		<br>
+		你喜欢的颜色：
+		<select name="select" size="2 "  multiple="multiple">
+		<option value="红色" selected="selected" >红色</option>
+		<option value="蓝色">蓝色</option>
+		<option value="紫色">紫色</option>
+		</select>
+		<br>
+		留言：<textarea name="textarea" cols="35" rows="5">请输入 </textarea>
+		 
+	</form>
+	<h4>滚动标记marquee</h4>
+	<h6>&lt;marquee direction="滚动方向 " behavior="滚动方式" scrollamount="滚动速度"<br> 
+	    scrolldelay="滚动间隔" loop="滚动次数" height="滚动区域高度" hspace="上下空白" vspace="左右空白"&gt;</h6>
+	<marquee direction="down" behavior="scroll" scrollamount="3" 
+	        scrolldelay="3" loop="3" height="300" bgcolor="aquamarine" hspace="50" vspace="40">
+	HTML是一门很好的语言！
+	</marquee>
+	<h4>flash动画与多媒体的插入</h4>
+	<br>flash
+	<embed src="flash文件地址" width="780" height="400"></embed>
+	<br>视频插入
+	<embed src="images/虫洞.mp4" width="780" height="400"></embed>
+	<h4>比例：</h4>
+    
+	<meter value="30" optinum="1" hight="0.9" low="1" max="1" min="0">
+    </meter>30%
+	<h4>video标签实现 虫洞视频</h4>
+	<video src="images/虫洞.mp4" controls="controls" width="400" height="300">	
+	</video>
+	<h4>audio标签实现 音频播放</h4>
+    <audio src="音频地址" controls="controls" width="400" height="200">
+	</audio>
+    <h4>url输入实现</h4>
+	<form>
+	<input name="urls" type="url" value="http://www.baidu.com/">
+	<input type="submit" value="提交">	
+	</form>
+	<h4>日期的提交</h4>
+	<form>
+	<input id="date" type="date" name="linyikongtiao.com">
+	<input type="submit" value="提交">	
+	</form>
+	<h4>时间的提交</h4>
+	<form>
+	<input id="date" type="time" name="linyikongtiao.com" value="12:00">
+	<input type="submit" value="提交">	
+	</form>
+	<h4>时间和日期的提交</h4>
+	
+	<input id="date" type="datetime" name="linyikongtiao.com" value="2022/01/02 12:00">
+	<input type="submit" value="提交">	
+	
+
+	<h3 align="center">HTML5的结构</h3>
+	<hr>
+	<h4>新增主体结构元素</h4>
+	<p>为了使文档结构更加清晰</p>
+	<article>
+		<section>
+		    <h5>article独立文章标签</h5>
+			<p>内含标题，正文，脚注等从属元素</p>
+        </section>
+		<section>
+			<h5>section独立章节标签</h5>
+			<p>内含小标题，章节正文</p>
+		</section>
+		<section>
+			<h5>nav导航链接组</h5>
+			<nav>
+				<ul>
+					<li><a href="demo.html">首页</a></li>
+					<li><a href="demo.html">公司介绍</a></ul>
+				</ul>
+			</nav>
+		</section>
+		<section>
+			<h5>aside附属信息</h5>
+			<p>article主要内容的附属信息/页面和站点全局，如侧边栏</p>
+		</section>
+		<aside><mark>aisde</mark></aside>
+	</article>
+	<article>
+		<header>
+	    <h4>新增被主体结构元素</h4>
+	    </header>
+		<section>
+		    <h5>header引导和导航的结构元素</h5>
+			<h5>hgroup引导和导航的结构元素</h5> 
+			<h5>footer脚注信息</h5>
+			<h5>address文档创建者的相关信息，联系方式，电子邮件，网站链接..</h5>
+        </section>
+		<footer>脚注</footer>
+    </article>
+
+
+
+
+
+    <br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br> 
+    </body>
+</html>
