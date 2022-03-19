@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM文字交互</title>
+<meta charset="utf-8">
+
+<script>
+    window.onload=function(){
+        //获取按钮对象
+        var oAdd=document.getElementById("add");
+        //设置按钮对象的onlick()，添加事件
+        oAdd.onclick=function(){
+            //获取列表对象
+            var oUl=document.getElementById("list");
+            //获取文本框对象
+            var oTxt=document.getElementById("txt");
+            //将文本框的的内容转化为一个“文本节点”（节点对象可以操作）
+            var textNode=document.createTextNode(oTxt.value);
+            //创建一个无需列表li行对象
+            var oLi=document.createElement("li");
+            //将文本（框）节点，即文本框里的内容 添加到li中
+            oLi.appendChild(textNode);
+            //将li添加到列表中
+            oUl.appendChild(oLi);
+        }
+        var oDel=document.getElementById("del");
+        //设置按钮对象的onlick()，添加事件
+        oDel.onclick=function(){
+            //获取列表对象
+            //不同对象引用操作同一个对象要取不同的名字
+            var oU2=document.getElementById("list");
+            //删除最后一个元素
+            oU2.removeChild(oU2.lastElementChild);
+        }
+        var oDelAll=document.getElementById("delall");
+        //设置按钮对象的onlick()，添加事件
+        oDelAll.onclick=function(){
+            //获取列表对象
+            //不同对象引用操作同一个对象要取不同的名字
+            var oU3=document.getElementById("list");
+            //删除所有元素
+            while(oU3!=false){
+                oU3.removeChild(oU3.lastElementChild);
+            }
+            
+        }
+        var oDellist=document.getElementById("dellist");
+        //设置按钮对象的onlick()，添加事件
+        oDellist.onclick=function(){
+            //获取列表对象
+            //不同对象引用操作同一个对象要取不同的名字
+            var oU4=document.getElementById("list");
+            //删除列表
+            document.body.removeChild(oU4);
+        }
+
+    }
+</script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>HTML</li>
+        <li>css</li>
+        <li>JavaScript</li>
+    </ul>
+    <input id="txt" type="text" value="输入框"/>
+    <input id="txt1" type="text" value="待替换"/>
+    <input id="txt2" type="text" value="替换成"/>
+    <br/>
+    <br/>
+    <input id="add" type="button" value="插入"/> 
+    <input id="del" type="button" value="删除"/>
+    <input id="rel" type="button" value="替换"/>
+    <input id="delall" type="button" value="删除所有元素">
+    <input id="dellist" type="button" value="删除整个列表">
+</body>
+</html>

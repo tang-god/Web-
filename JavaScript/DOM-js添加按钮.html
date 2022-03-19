@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM-按钮与图片的动态添加</title>
+<meta charset="utf-8"/>
+<style>
+</style>
+<script>
+    window.onload=function(){
+        //定义添加一个表单按钮对象
+        var oInput=document.createElement("input");
+        oInput.id="submit";
+        oInput.type="button";
+        oInput.value="提交";
+        document.body.appendChild(oInput);
+        var oBr=document.createElement("br");
+        document.body.appendChild(oBr)
+        //定义添加一个图片对象
+        var oImg=document.createElement("img");
+        oImg.className="laker";
+        oImg.src="images/lake.jpg";
+        oImg.style.border="1px solid silver"
+        document.body.appendChild(oImg);
+    }
+
+    
+</script>
+
+</head>
+<body>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM-获取value</title>
+<meta charset="utf-8"/>
+
+<script>
+    window.onload=function(){
+        //定义添加一个表单按钮对象
+        var oBtn=document.getElementById("btn");
+        var oSel=document.getElementById("select");
+        oBtn.onclick=function(){
+            alert(oSel.value);
+        };
+
+    }  
+</script>
+
+</head>
+<body>
+    <select id="select">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+    </select>
+    <input id="btn" type="button" value="获取">
+</body>
+</html>

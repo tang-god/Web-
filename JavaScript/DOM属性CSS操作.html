@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM-获取value</title>
+<meta charset="utf-8"/>
+<style>
+    .firstbox{
+        width:100px;
+        height: 100px;
+        background-color: hotpink;
+    }
+    .secondbox{
+        width:100px;
+        height: 100px;
+        background-color: hotpink;
+    }
+
+</style>
+
+<script>
+    window.onload=function(){
+        //定义添加一个表单按钮对象
+        var oBtn=document.getElementById("btn");
+        var oBtn1=document.getElementById("btn1");
+        var oBtn2=document.getElementById("btn2");
+        var oBtn3=document.getElementById("btn3");
+        var oBtn4=document.getElementById("btn4");
+        var oBox=document.getElementById("box");
+        oBtn.onclick=function(){
+            //获取颜色属性值rgb格式
+            alert(getComputedStyle(oBox).backgroundColor); 
+        };
+        oBtn1.onclick=function(){
+            //设置颜色属性值(驼峰式)
+            oBox.style.backgroundColor="lightskyblue";
+        };
+
+        oBtn2.onclick=function(){
+            var txt=document.getElementById("txt").value;
+            var txt1=document.getElementById("txt1").value;
+            //关于字符串操作必须是style[""]=""形式
+            oBox.style[txt]=txt1;
+        };
+        oBtn3.onclick=function(){
+            var txt2=document.getElementById("txt2").value;
+            oBox.style.cssText=txt2;
+        };
+        oBtn4.onclick=function(){
+            oBox.style.cssText="width:100px;height: 100px;background-color: hotpink;";
+        };
+
+    }  
+</script>
+
+</head>
+<body>
+    
+    <input id="btn" type="button" value="获取颜色">
+    <input id="btn1" type="button" value="修改颜色">
+    </br>
+    属性：<input id="txt" type="text"></br>
+    取值：<input id="txt1" type="text"></br>
+    <input id="btn2" type="button" value="设置属性值"></br>
+    <input id="txt2" type="text"></br>
+    <input id="btn3" type="button" value="设置CSS"></br>
+    <div id="box" class="firstbox" ></div>
+    <input id="btn4" type="button" value="还原"></br>
+</body>
+</html>

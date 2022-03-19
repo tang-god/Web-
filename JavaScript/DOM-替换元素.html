@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM替换元素</title>
+<meta charset="utf-8">
+
+<script>
+    window.onload=function(){
+        //获取按钮对象
+        var oBtn=document.getElementById("btn");
+        //设置按钮对象的onlick()，添加事件
+        oBtn.onclick=function(){
+            //获取body 的第一个元素
+            var oFirst=document.querySelector("body *:first-child");
+            //获取输入2个标签的文本框
+            var oTag=document.getElementById("intag");
+            var oTxt=document.getElementById("intxt");
+            //将文本框的的内容转化为一个“文本节点”
+            var oNewTag=document.createElement(oTag.value);
+            var oNewTxt=document.createTextNode(oTxt.value);
+            //为标签添加文本
+            oNewTag.appendChild(oNewTxt);
+            //添加好文本的标签去替换
+            document.body.replaceChild(oNewTag,oFirst)
+        }
+    }
+</script>
+</head>
+
+<body>
+    <p>JavaScript</p>
+    <hr/>
+    输入标签<input id="intag" type="text"/><br/>
+    输入内容<input id="intxt" type="text"/><br/>
+    <input id="btn" type="button" value="替换"/>
+</body>
+</html>

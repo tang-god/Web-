@@ -1,0 +1,41 @@
+<!--验证码算法 ，交互事件待优化？-->
+<!DOCTYPE HMTL>
+<HTML>
+    <head>
+        <title>验证码</title>
+         <meta chrset="utf-8"> 
+    </head>
+    <body>
+    <!--告诉浏览器这是JS脚本(注释不能再<script>中)--> 
+       
+    <script>
+        //随机产生验证码
+        function getYznum(){
+            var str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            var arr=str.split("");
+            var result="";
+            for (var i=0;i<4;i++)
+            {
+                var n=Math.floor(Math.random(  )* arr.length);
+                result+=arr[n];
+            }
+            document.write(result);
+    }
+        
+    </script>
+         
+    <font size=10 color=purple>JavaScript的验证码
+    </font>
+    <div>
+        <form>
+            <input type="buttom" name="按钮" onClick="getYznum()" value="获取">
+            <input type="button" name="按钮" onClick="getYznum()" value="获取">
+        </form>
+    </div> 
+
+
+
+    <br>
+   
+    </body>
+</HTML>

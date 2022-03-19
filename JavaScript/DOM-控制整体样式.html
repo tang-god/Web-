@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM-控制整体样式</title>
+<meta charset="utf-8"/>
+<style>
+    .main{
+        color:red;
+        font-weight:bold;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oP=document.getElementsByTagName("p");
+        //定义添加一个表单按钮对象
+        var oAdd=document.getElementById("btn_add");
+        var oRemove=document.getElementById("btn_remove");
+        //添加样式
+        oAdd.onclick=function(){
+            oP[0].className="main";
+        };
+        //删除样式
+        oRemove.onclick=function(){
+            oP[0].removeAttribute("class");
+            if(oP[0].hasAttribute("color")){
+                oP[0].onclick=function(){
+                    oP[0].color="blue";
+                };
+            }
+        };
+    }
+
+    
+</script>
+
+</head>
+<body>
+    <p>冲天香气透长安，百花杀尽百花开。</p>
+    <input id="btn_add" type="button" value="添加样式">
+    <input id="btn_remove" type="button" value="删除样式">
+</body>
+</html>

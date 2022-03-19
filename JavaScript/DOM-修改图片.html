@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM-修改图片</title>
+<meta charset="utf-8"/>
+<style>
+    img{
+        width: 200px;
+        height: 150px;
+    }
+</style>
+<script>
+    window.onload=function(){
+        //定义添加一个表单按钮对象
+        var oBtn=document.getElementById("btn");
+        var oPic=document.getElementById("pic");
+        flag=true;
+        oBtn.onclick=function(){
+            if(flag){
+                oPic.src="images/zli.jpg";
+                flag=false;
+            }else{
+                oPic.src="images/lake.jpg";
+                flag=true;
+            }
+        };
+
+    }  
+</script>
+
+</head>
+<body>
+    <input id="btn" type="button" value="修改"><br/>
+    <img id="pic" src="images/lake.jpg">
+</body>
+</html>

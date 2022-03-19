@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+         #search{color:#bbbbbb;}
+    </style>
+    <script>
+         window.onload=function()
+         {
+             //获取元素对象
+             var oSearch=document.getElementById("search");
+             var oBtn=document.getElementById("Button1");
+             oBtn.onclick=function(){
+                var word=oSearch.value;
+                open("https://www.baidu.com/s?ie=UTF-8&wd="+word,"_blank");
+             }
+             //获取焦点
+             oSearch.onfocus=function()
+             {
+                if(this.value=="百度一下,你就知道")
+                {
+                   this.value="";
+                }
+             };
+             //失去焦点
+             oSearch.onblur=function()
+             {
+                if(this.value=="")
+                {
+                   this.value="百度一下,你就知道";
+                }
+             };
+
+             var oTxt=document.getElementById("search1");
+             //自动获取焦点=            oTxt.focus();
+
+             var oBtn2=document.getElementById("Button2");
+             var opener=null;
+             oBtn2.onclick=function(){
+                 if(confirm("你确定跳转首页码？")){
+                    window.location.href="http://www.baidu.com";
+                 }else{
+                    document.wirte("你取消了跳转");
+                 }
+             }
+             var oBtn3=document.getElementById("Button3");
+             oBtn3.onclick=function(){
+                 window.close();
+             }
+         }
+    </script>
+</head>
+<body>
+    <input id="search" type="text" value="百度一下,你就知道"/>
+    <input id="search1" type="text"/>
+    <input id="Button1" type="button" value="搜索" />
+    <input id="Button2" type="button" value="跳转首页" />
+    <input id="Button3" type="button" value="关闭当前窗口" />
+</body>
+</html>
